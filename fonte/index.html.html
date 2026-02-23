@@ -50,15 +50,22 @@
 
     /* HERO */
     .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-      padding: calc(var(--header-offset) + 90px) 2.5rem 4rem;
-      background: linear-gradient(180deg,#f8eefc 0%,#efe6fb 50%,#f3e5f5 100%);
-      min-height: 60vh;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: calc(var(--header-offset) + 20px);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    background: linear-gradient(180deg,#f8eefc 0%,#efe6fb 50%,#f3e5f5 100%);
+}
+@media (min-width: 900px) {
+  .hero {
+    min-height: 60vh;
+  }
+}
 
     .hero-text {
       flex: 1 1 480px;
@@ -124,7 +131,7 @@
 
     /* GALERIA */
     #galeria {
-      padding: 4rem 2rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
       background: #fff;
       text-align: center;
     }
@@ -160,14 +167,24 @@
     }
 
     /* SOBRE */
-    #sobre {
-      padding: 4rem 2rem;
-      background: linear-gradient(180deg,#f3e5f5 0%,#f8eefc 100%);
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  #sobre {
+  padding: 5rem 2rem;
+  background: #fff8dc;
+}
+  #sobre .sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.sobre-text p {
+  margin-bottom: 1.5rem;
+}
 
     #sobre img {
       width: 360px;
@@ -218,9 +235,9 @@
     }
 
     .valor-item img {
-      width: 64px;
-      height: 64px;
-      border-radius: 10px;
+      width: 120px;
+      height: auto;
+      border-radius: 16px;
       object-fit: contain;
     }
 
@@ -275,23 +292,385 @@
       #sobre img{width:320px}
       .valor-item{flex-direction:column;align-items:center;text-align:center}
     }
+
+/* MINHA MALETA */
+#maleta {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg,#f8eefc 0%,#efe6fb 100%);
+}
+
+.maleta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.maleta-img img {
+  width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.maleta-text {
+  max-width: 600px;
+  color: #5e35b1;
+}
+
+.maleta-text h2 {
+  font-size: 2rem;
+  color: #4a148c;
+  margin-bottom: 1.5rem;
+}
+
+.maleta-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* MEUS DESENHOS */
+#desenhos {
+  padding: 5rem 2rem;
+  background: #fff8dc; /* amarelo claro suave */
+}
+
+.desenhos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.desenhos-text {
+  max-width: 600px;
+  color: #5e35b1;
+}
+
+.desenhos-text h2 {
+  font-size: 2.2rem;
+  color: #6a1b9a;
+  margin-bottom: 1.5rem;
+}
+
+.desenhos-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.desenhos-img img {
+  width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+/* NOSSA MISSÃO */
+#missao {
+  padding: 6rem 2rem;
+  background: #9c7bb5; /* roxo suave */
+}
+
+.missao-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.missao-text {
+  max-width: 600px;
+  color: #fff3b0; /* amarelo claro */
+}
+
+.missao-text h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.missao-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.missao-img img {
+  width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* EFEITO HOVER */
+.galeria-grid img {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 16px;
+}
+
+.fechar {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+/* LIGHTBOX AVANÇADO */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.fechar {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+  color: #ba68c8;
+}
+
+/* LIGHTBOX ULTRA */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.lightbox-img {
+  max-width: 85%;
+  max-height: 70%;
+  border-radius: 16px;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+.contador {
+  color: white;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.miniaturas {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  overflow-x: auto;
+  max-width: 90%;
+  padding-bottom: 10px;
+}
+
+.miniaturas img {
+  width: 70px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.miniaturas img.ativa {
+  opacity: 1;
+  border: 2px solid #ba68c8;
+}
+
+.miniaturas img:hover {
+  opacity: 1;
+}
+
+
+/* botão hamburguer escondido no desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  header {
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  @media (max-width: 768px) {
+
+  header {
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* HERO */
+  .hero {
+    display: block;
+    padding: calc(var(--header-offset) + 10px) 1.2rem 0;
+    min-height: auto;
+  }
+
+  .hero-text {
+    flex: none;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-images {
+    margin-top: 1rem;
+  }
+
+  #galeria {
+    padding: 1rem;
+  }
+
+}
+}
+
+
+
+</style>
+
   </style>
 </head>
 <body>
 
   <header>
-    <a href="#inicio"><img src="LOGO ALCATEIA KIDS - 1.png" alt="Logo Alcateia Kids" class="logo" /></a>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#sobre">Sobre Mim</a></li>
-        <li><a href="#valores">Valores</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button class="cta-btn" data-anchor="#contato">Reservar Agora</button>
-  </header>
+  <a href="#inicio">
+    <img src="logo-alcateia.png" alt="Alcateia Kids" class="logo">
+  </a>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <nav>
+    <ul id="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#valores">Valores</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- HERO -->
   <section id="inicio" class="hero">
@@ -312,45 +691,160 @@
   </section>
 
   <!-- GALERIA -->
-  <section id="galeria">
-    <h2>✨ Nossas Artes Recentes</h2>
-    <div class="galeria-grid">
-      <img src="primeiro.jpg" alt="Pintura 1" />
-      <img src="segunda.jpg" alt="Pintura 2" />
-      <img src="terceira.jpg" alt="Pintura 3" />
-      <img src="quarta.jpg" alt="Pintura 4" />
-      <img src="quinta.jpg" alt="Pintura 5" />
-      <img src="sexta.jpg" alt="Pintura 6" />
-      <img src="setima.jpg" alt="Pintura 7" />
-      <img src="oitava.jpg" alt="Pintura 8" />
-    </div>
-  </section>
+<section id="galeria">
+  <h2>✨ Nossas Artes Recentes</h2>
 
-  <!-- SOBRE (com quebra forçada) -->
-<section id="sobre">
-  <img src="Captura de tela 2025-11-09 104008.png" alt="Letícia e Lolo (trocar se quiser)">
-  <div class="sobre-text">
-    <h2>🐺 LOBINHO - responsável pela Alcateia Kids</h2>
-
-    <p>
-      Sou a <strong>Letícia</strong>, artista e mãe atípica da Lolo. A Alcateia Kids nasceu do encontro entre dois mundos muito importantes da minha vida: a maternidade e a arte.
-    </p>
-
-    <p>
-      Criei essa empresa como uma forma de conciliar o cuidado com minha filha e a paixão por pintar, e descobri no mundo dos eventos o <strong>meu propósito</strong>.<br><br>
-      <h2>ALCATEIA: PORQUE ESSE NOME?</h2>
-    </p>
-
-    <p>
-      O nome Alcateia nasceu de um pedacinho íntimo da nossa história. Minha filha é uma criança autista, não verbal, e desde bem pequena sempre se expressou através de sons e balbucios. Entre eles, havia um em especial — um som que lembrava o uivo de um lobo.
-    </p>
-
-    <p>Era algo muito único, só dela… e foi daí que surgiu a primeira Lobinho da minha alcateia. 💜</p>
-
-    <p>Quando criei a marca, quis que ela carregasse essa presença, esse amor e esse propósito.</p>
+  <div class="galeria-grid">
+    <img src="primeiro.jpg" alt="Pintura facial infantil 1" />
+    <img src="segunda.jpg" alt="Pintura facial infantil 2" />
+    <img src="quarta.jpg" alt="Pintura facial infantil 4" />
+    <img src="quinta.jpg" alt="Pintura facial infantil 5" />
+    <img src="sexta.jpg" alt="Pintura facial infantil 6" />
+    <img src="setima.jpg" alt="Pintura facial infantil 7" />
+    <img src="oitava.jpg" alt="Pintura facial infantil 8" />
+    <img src="bob.png" alt="Pintura Bob Esponja" />
+    <img src="bob2.png" alt="Pintura Bob Esponja infantil" />
+    <img src="panda.png" alt="Pintura panda infantil" />
+    <img src="sereria.png" alt="Pintura sereia infantil" />
+    <img src="sereria2.png" alt="Pintura sereia artística" />
+    <img src="ursinho.png" alt="Pintura ursinho infantil" />
+    <img src="sonic.png" alt="Pintura Sonic infantil" />
+    <img src="bus.png" alt="Pintura ônibus escolar infantil" />
+    <img src="scopb.png" alt="Pintura personagem infantil" />
   </div>
 </section>
 
+<!-- LIGHTBOX ULTRA -->
+<div id="lightbox">
+  <span class="fechar">&times;</span>
+
+  <span class="prev">&#10094;</span>
+  <img class="lightbox-img" src="">
+  <span class="next">&#10095;</span>
+
+  <div class="contador"></div>
+  <div class="miniaturas"></div>
+</div>
+
+  <!-- SOBRE (com quebra forçada) -->
+<section id="sobre">
+  <div class="sobre-container">
+  <img src="Captura de tela 2025-11-09 104008.png" alt="Letícia e Lolo (trocar se quiser)">
+  <div class="sobre-text">
+    <h2>Prazer, eu sou a Lobinho</h2>
+
+    <p>
+      Minha história com a pintura artística começou muito antes de se tornar
+um trabalho. Nasceu do desejo de criar, cuidar e transformar momentos
+simples em lembranças felizes. A arte sempre foi para mim uma forma de
+comunicação uma maneira de acolher, sentir e expressar emoções que
+às vezes as palavras não conseguem.
+    </p>
+
+    <p>
+      A maternidade me ensinou lições que a arte também me mostrou: cada
+criança tem seu ritmo, sua maneira única de se expressar, suas
+necessidades e seus encantos. Como mãe atípica, aprendi a observar com
+mais atenção, a respeitar o tempo, o espaço e o jeito de ser de cada um.
+Essa experiência me fez perceber que o cuidado, a paciência e a escuta são
+tão importantes quanto a técnica ou o traço perfeito.
+    </p>
+
+    <p>
+      Foi assim que nasceu a Alcateia Kids: da vivência pessoal, da maternidade e
+da vontade de oferecer algo que vá além da pintura facial. Cada desenho é
+pensado com carinho, responsabilidade e respeito, usando materiais
+seguros e profissionais, sempre priorizando o bem-estar e o conforto das
+crianças.
+    </p>
+  </div>
+</section>
+
+<!-- MINHA MALETA -->
+<section id="maleta">
+  <div class="maleta-container">
+
+    <div class="maleta-img">
+      <img src="maleta.png" alt="Maleta de pintura facial">
+    </div>
+
+    <div class="maleta-text">
+      <h2>Minha Maleta 🎨</h2>
+
+      <p>
+        Com as nossas tintas cada criança se transforma no que mais desejar!
+        <strong>De princesas e super-heróis a animais encantados</strong>, a mágica acontece
+        na ponta do pincel, despertando a <strong>criatividade e a imaginação</strong> de cada pequeno.
+      </p>
+
+      <p>
+        Todo o processo é pensado com <strong>segurança, higiene e conforto</strong> em mente.
+        Utilizamos materiais de qualidade, nacionais e importados, especialmente desenvolvidos
+        para a pele infantil, garantindo que a diversão seja totalmente segura.
+      </p>
+
+      <p>
+        Mais do que pintura, é uma experiência única que faz cada criança se sentir
+        especial e cria memórias que ficam para sempre!
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- MEUS DESENHOS -->
+<section id="desenhos">
+  <div class="desenhos-container">
+
+    <div class="desenhos-text">
+      <h2>Meus desenhos ✏️</h2>
+
+      <p>
+        Ao longo da minha jornada artística, fiz diversos cursos que me ajudaram a aprimorar 
+        <strong>técnicas de desenho de observação</strong>, desenvolvendo precisão, detalhe e 
+        sensibilidade em cada traço.
+      </p>
+
+      <p>
+        Sou uma verdadeira amante de <strong>desenhos de personagens</strong>, e isso se reflete 
+        em cada pintura que faço. Meu maior ponto forte é justamente essa habilidade:
+        <strong>transformar referências e inspirações em arte viva</strong>, trazendo vida e 
+        personalidade aos personagens que crio para encantar crianças e adultos.
+      </p>
+
+      <p>
+        Cada desenho é pensado com <strong>carinho e técnica</strong>, para que cada detalhe 
+        conte uma história e desperte magia e imaginação.
+      </p>
+    </div>
+
+    <div class="desenhos-img">
+      <img src="nosso_desenho.png" alt="Desenho artístico em pintura facial">
+    </div>
+
+  </div>
+</section>
+  <!-- NOSSA MISSÃO -->
+<section id="missao">
+  <div class="missao-container">
+
+    <div class="missao-text">
+      <h2>Nossa missão:</h2>
+
+      <p>
+        Transformar seu evento em uma <strong>experiência afetiva</strong> por meio
+        da pintura artística, criando um espaço seguro, respeitoso e onde cada
+        criança se sinta especial de forma criativa.
+      </p>
+    </div>
+
+    <div class="missao-img">
+      <img src="missao.png" alt="Maleta de pintura artística">
+    </div>
+
+  </div>
+</section>
   <!-- VALORES -->
   <section id="valores">
     <h2>Valores</h2>
@@ -358,24 +852,24 @@
       <div class="valor-item">
         <img src="foto_pincel.png" alt="Paleta de tinta">
         <div>
-          <h3>🎨 Arte com propósito</h3>
-          <p>Acreditamos que a arte é uma forma de comunicação e é através dela que levamos cor, alegria e imaginação para as crianças.</p>
+          <h3>Segurança</h3>
+          <p>Materiais profissionais, higiênicos e próprios para a pele, garantindo qualidade, conforto e tranquilidade em cada pintura.</p>
         </div>
       </div>
 
       <div class="valor-item">
         <img src="foto_lobinho.png" alt="Lobinho">
         <div>
-          <h3>🐺 Conexão e Afeto</h3>
-          <p>Cada criança que senta na nossa cadeira faz parte dessa alcateia e merece ser acolhida e livre pra ser quem é.</p>
+          <h3>Cuidado</h3>
+          <p>Atendimento feito com atenção, respeito ao tempo da criança e olhar sensível para cada individualidade.</p>
         </div>
       </div>
 
       <div class="valor-item">
         <img src="coracao_quebracabeca.png" alt="Quebra-cabeça">
         <div>
-          <h3>🧩 Inclusão e Respeito</h3>
-          <p>Lutamos por um espaço onde cada criança é vista, respeitada e celebrada em sua individualidade.</p>
+          <h3>Inclusão</h3>
+          <p>Um trabalho que respeita as diferenças, com acolhimento especial à vivência do autismo e às necessidades de cada criança.</p>
         </div>
       </div>
     </div>
@@ -456,6 +950,159 @@
       window.addEventListener('load', updateHeaderOffsetCSS);
       window.addEventListener('resize', updateHeaderOffsetCSS);
     })();
+    // GALERIA COMPLETA COM SETAS + SWIPE + AUTO
+const imagens = document.querySelectorAll('.galeria-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const fechar = document.querySelector('.fechar');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const contador = document.querySelector('.contador');
+const miniaturasContainer = document.querySelector('.miniaturas');
+
+let indexAtual = 0;
+let zoom = false;
+
+// Criar miniaturas
+imagens.forEach((img, index) => {
+  const mini = document.createElement('img');
+  mini.src = img.src;
+  mini.addEventListener('click', () => abrirImagem(index));
+  miniaturasContainer.appendChild(mini);
+});
+
+const miniaturas = document.querySelectorAll('.miniaturas img');
+
+function atualizarMiniaturas() {
+  miniaturas.forEach(m => m.classList.remove('ativa'));
+  miniaturas[indexAtual].classList.add('ativa');
+}
+
+function atualizarContador() {
+  contador.textContent = `${indexAtual + 1} / ${imagens.length}`;
+}
+
+function abrirImagem(index) {
+  indexAtual = index;
+  lightbox.style.display = 'flex';
+  trocarImagem();
+}
+
+function trocarImagem() {
+  lightboxImg.style.opacity = 0;
+  setTimeout(() => {
+    lightboxImg.src = imagens[indexAtual].src;
+    lightboxImg.style.opacity = 1;
+    atualizarMiniaturas();
+    atualizarContador();
+  }, 200);
+}
+
+function fecharLightbox() {
+  lightbox.style.display = 'none';
+  pararAuto();
+  zoom = false;
+  lightboxImg.style.transform = 'scale(1)';
+}
+
+function proximaImagem() {
+  indexAtual = (indexAtual + 1) % imagens.length;
+  trocarImagem();
+}
+
+function imagemAnterior() {
+  indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
+  trocarImagem();
+}
+
+// Eventos
+imagens.forEach((img, index) => {
+  img.addEventListener('click', () => abrirImagem(index));
+});
+
+fechar.addEventListener('click', fecharLightbox);
+next.addEventListener('click', proximaImagem);
+prev.addEventListener('click', imagemAnterior);
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) fecharLightbox();
+});
+
+// Swipe mobile
+let startX = 0;
+lightbox.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) proximaImagem();
+  if (endX - startX > 50) imagemAnterior();
+});
+
+// Zoom duplo clique (desktop)
+lightboxImg.addEventListener('dblclick', () => {
+  zoom = !zoom;
+  lightboxImg.style.transform = zoom ? 'scale(1.8)' : 'scale(1)';
+});
+
+// Zoom dois toques (mobile)
+let lastTap = 0;
+lightboxImg.addEventListener('touchend', () => {
+  const now = new Date().getTime();
+  if (now - lastTap < 300) {
+    zoom = !zoom;
+    lightboxImg.style.transform = zoom ? 'scale(1.8)' : 'scale(1)';
+  }
+  lastTap = now;
+});
+// CONTROLE COMPLETO POR TECLADO
+document.addEventListener('keydown', function(e) {
+
+  // Só funciona se o lightbox estiver aberto
+  if (lightbox.style.display !== "flex") return;
+
+  switch(e.key) {
+
+    case "Escape":
+      fecharLightbox();
+      break;
+
+    case "ArrowRight":
+      proximaImagem();
+      break;
+
+    case "ArrowLeft":
+      imagemAnterior();
+      break;
+
+    case "Enter":
+      fecharLightbox();
+      break;
+  }
+});
   </script>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  // Fecha ao clicar em um link
+  document.querySelectorAll('#menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+    });
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
+</script>
 </body>
 </html>
