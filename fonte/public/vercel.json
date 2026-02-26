@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "src": "^/cartao/?$",
+      "dest": "/cartao.html"
+    },
+    {
+      "src": "^/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "cartao.alcateiakids.com.br"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://www.alcateiakids.com.br/cartao"
+      }
+    }
+  ]
+}
