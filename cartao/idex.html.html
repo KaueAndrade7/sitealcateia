@@ -6,101 +6,70 @@
   <title>Alcateia Kids | Cartão Digital</title>
 
   <style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(180deg, #fff3a6 0%, #c77dff 50%, #3a0f63 100%);
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 420px;
-    padding: 30px 20px 40px;
-    text-align: center;
-  }
-
-  /* TOPO ESTAMPADO */
-  .topo-banner {
-  width: 100%;
-  height: 400px; /* 🔼 mais espaço em cima */
-
-  background-image: url("logo-alcateia-kids.png");
-  background-repeat: no-repeat;
-
-  /* 🔽 desce um pouco a arte */
-  background-position: center 0.0px;
-
-  /* mantém sem bordas brancas */
-  background-size: 110% auto;
-
-  /* 🔽 recorte menos agressivo no topo */
-  clip-path: ellipse(120% 85% at 50% 10%);
-
-  background-color: #fff3a6;
-  margin-bottom: 30px;
-
-
-  }
-
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #fff3a6;
-    color: #6a1bb1;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 16px;
-    border-radius: 40px;
-    margin-bottom: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-  }
-
-  .footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #f0d9ff;
-    opacity: 0.9;
-  }
-
- @media (max-width: 480px) {
-  .topo-banner {
-    height: 300px;
-    background-size: 120% auto;
-    clip-path: ellipse(140% 90% at 50% 0%);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff3a6 0%, #c77dff 55%, #3a0f63 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
     }
-  }
-</style>
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      padding: 30px 20px 40px;
+    }
+
+    .topo {
+      background: #fff3a6;
+      border-radius: 0 0 40px 40px;
+      padding: 40px 20px 60px;
+      margin-bottom: 30px;
+    }
+
+    .topo img {
+      width: 220px;
+      max-width: 90%;
+    }
+
+    .btn {
+      display: block;
+      background: #fff3a6;
+      color: #6a1bb1;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 16px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: #f0d9ff;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
   <div class="card">
 
-    <!-- LOGO (troque a imagem pelo seu arquivo) -->
-  <div class="topo-banner"></div>
+    <div class="topo">
+      <img src="logo-alcateia-kids.png" alt="Alcateia Kids">
+    </div>
 
-    <!-- ORÇAMENTOS -->
-    <a class="btn" href="https://api.whatsapp.com/send/?phone=5511973767996&text&type=phone_number&app_absent=0" target="_blank">
+    <a class="btn" href="https://api.whatsapp.com/send/?phone=5511973767996" target="_blank">
       📋 Orçamentos
     </a>
 
-    <!-- REDES SOCIAIS -->
     <a class="btn" href="https://www.instagram.com/alcateiakids" target="_blank">
       📸 Redes Sociais
     </a>
 
-    <!-- SOBRE NÓS -->
-    <a class="btn" href="https://www.alcateiakids.com.br/" target="_blank">
+    <a class="btn" href="https://www.alcateiakids.com.br" target="_blank">
       🌐 Sobre nós
     </a>
 
