@@ -11,6 +11,7 @@
 
 <meta name="robots" content="index, follow">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
     :root { --header-offset: 120px; }
@@ -340,7 +341,7 @@
 /* MEUS DESENHOS */
 #desenhos {
   padding: 5rem 2rem;
-  background: #fff8dc; /* amarelo claro suave */
+  background: #fff8dc; 
 }
 
 .desenhos-container {
@@ -377,7 +378,7 @@
 /* NOSSA MISSÃO */
 #missao {
   padding: 6rem 2rem;
-  background: #9c7bb5; /* roxo suave */
+  background: #9c7bb5; 
 }
 
 .missao-container {
@@ -392,7 +393,7 @@
 
 .missao-text {
   max-width: 600px;
-  color: #fff3b0; /* amarelo claro */
+  color: #fff3b0; 
 }
 
 .missao-text h2 {
@@ -570,7 +571,7 @@
 }
 
 
-/* botão hamburguer escondido no desktop */
+/* botão */
 .menu-toggle {
   display: none;
 }
@@ -720,7 +721,6 @@
   </div>
 </section>
 
-<!-- LIGHTBOX ULTRA -->
 <div id="lightbox">
   <span class="fechar">&times;</span>
 
@@ -732,7 +732,6 @@
   <div class="miniaturas"></div>
 </div>
 
-  <!-- SOBRE (com quebra forçada) -->
 <section id="sobre">
   <div class="sobre-container">
   <img src="Captura de tela 2025-11-09 104008.png" alt="Letícia e Lolo (trocar se quiser)">
@@ -766,7 +765,6 @@ crianças.
   </div>
 </section>
 
-<!-- MINHA MALETA -->
 <section id="maleta">
   <div class="maleta-container">
 
@@ -799,7 +797,6 @@ crianças.
   </div>
 </section>
 
-  <!-- MEUS DESENHOS -->
 <section id="desenhos">
   <div class="desenhos-container">
 
@@ -831,7 +828,7 @@ crianças.
 
   </div>
 </section>
-  <!-- NOSSA MISSÃO -->
+  
 <section id="missao">
   <div class="missao-container">
 
@@ -851,7 +848,7 @@ crianças.
 
   </div>
 </section>
-  <!-- VALORES -->
+ 
   <section id="valores">
     <h2>Valores</h2>
     <div class="valores-container">
@@ -881,7 +878,7 @@ crianças.
     </div>
   </section>
 
-  <!-- CONTATO -->
+  
   <section id="contato">
     <div class="contato-card">
       <h2>Entre em Contato 💬</h2>
@@ -897,7 +894,7 @@ crianças.
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
-  <!-- SCRIPT FINAL -->
+  
   <script>
     (function() {
       const header = document.querySelector('header');
@@ -956,7 +953,7 @@ crianças.
       window.addEventListener('load', updateHeaderOffsetCSS);
       window.addEventListener('resize', updateHeaderOffsetCSS);
     })();
-    // GALERIA COMPLETA COM SETAS + SWIPE + AUTO
+    
 const imagens = document.querySelectorAll('.galeria-grid img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
@@ -969,7 +966,7 @@ const miniaturasContainer = document.querySelector('.miniaturas');
 let indexAtual = 0;
 let zoom = false;
 
-// Criar miniaturas
+
 imagens.forEach((img, index) => {
   const mini = document.createElement('img');
   mini.src = img.src;
@@ -1046,13 +1043,13 @@ lightbox.addEventListener('touchend', e => {
   if (endX - startX > 50) imagemAnterior();
 });
 
-// Zoom duplo clique (desktop)
+
 lightboxImg.addEventListener('dblclick', () => {
   zoom = !zoom;
   lightboxImg.style.transform = zoom ? 'scale(1.8)' : 'scale(1)';
 });
 
-// Zoom dois toques (mobile)
+
 let lastTap = 0;
 lightboxImg.addEventListener('touchend', () => {
   const now = new Date().getTime();
@@ -1062,10 +1059,10 @@ lightboxImg.addEventListener('touchend', () => {
   }
   lastTap = now;
 });
-// CONTROLE COMPLETO POR TECLADO
+
 document.addEventListener('keydown', function(e) {
 
-  // Só funciona se o lightbox estiver aberto
+  
   if (lightbox.style.display !== "flex") return;
 
   switch(e.key) {
@@ -1096,14 +1093,14 @@ document.addEventListener('keydown', function(e) {
     menu.classList.toggle('active');
   });
 
-  // Fecha ao clicar em um link
+  
   document.querySelectorAll('#menu a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('active');
     });
   });
 
-  // Fecha ao clicar fora
+  
   document.addEventListener('click', (e) => {
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {
       menu.classList.remove('active');
